@@ -1,0 +1,107 @@
+# starship.toml
+
+add_newline = true
+palette = "default"
+
+format = """
+[╭](fg:separator)\
+$status\
+$directory\
+$cmd_duration\
+$line_break\
+[╰](fg:separator)\
+$character\
+"""
+
+###########################################
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[palettes.default]
+# prompt_ok  = "#8047c1"
+# prompt_err = "#e23140"
+# icon       = "#161514"
+# separator  = "#35312c"
+# background = "#35312c"
+# directory  = "#9f31e2"
+# duration   = "#e26f31"
+# status     = "#e23140"
+
+
+
+
+# sapphire
+prompt_ok  = "#74c7ec"
+# peach
+# prompt_err = "#fab387"
+# flamingo
+prompt_err = "#f2cdcd"
+status     = "#f2cdcd"
+# base
+icon       = "#1e1e2e"
+# surface2
+separator  = "#585b70"
+# surface0
+background = "#313244"
+# blue
+directory  = "#89b4fa"
+# green
+duration   = "#a6e3a1"
+# red
+# status     = "#f38ba8"
+
+###########################################
+
+[character]
+success_symbol = "[❯](fg:prompt_ok)"
+error_symbol = "[❯](fg:prompt_err)"
+
+[directory]
+# 
+format = "[─](fg:separator)[](fg:directory)[ ](fg:icon bg:directory)[](fg:directory bg:background)[ $path](bg:background)[](fg:background)"
+truncate_to_repo = false
+truncation_length = 0
+
+[status]
+#    󱖫 
+format = "[─](fg:separator)[](fg:status)[ ](fg:icon bg:status)[](fg:status bg:background)[ $status](bg:background)[](fg:background)"
+pipestatus = true
+pipestatus_separator = "-"
+pipestatus_segment_format = "$status"
+pipestatus_format = "[─](fg:separator)[](fg:status)[](fg:icon bg:status)[](fg:status bg:background)[ $pipestatus](bg:background)[](fg:background)"
+disabled = false
+
+[cmd_duration]
+# 󱐋
+format = "[─](fg:separator)[](fg:duration)[ ](fg:icon bg:duration)[](fg:duration bg:background)[ $duration](bg:background)[](fg:background)"
+min_time = 1000
+
+[time]
+format = "[](fg:duration)[󰥔](fg:icon bg:duration)[](fg:duration bg:background)[ $time](bg:background)[](fg:background)"
+disabled = false

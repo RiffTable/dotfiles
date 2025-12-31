@@ -1,0 +1,10 @@
+set completion-ignore-case On
+
+# keybindings
+"\C-x": kill-whole-line
+
+"\C-l": forward-char
+"\C-h": backward-char
+
+"\C-L": forward-word
+"\C-H": backward-word

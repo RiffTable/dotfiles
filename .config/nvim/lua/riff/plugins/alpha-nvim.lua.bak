@@ -1,0 +1,33 @@
+return {
+  'goolord/alpha-nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  config = function()
+    local dashboard = require("alpha.themes.dashboard")
+
+    -- Set header
+    dashboard.section.header.val = {
+      "                                                     ",
+      "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+      "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+      "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+      "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+      "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+      "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+      "                                                     ",
+    }
+
+    local leader = "SPC"
+
+    -- Set menu
+    dashboard.section.buttons.val = {
+      dashboard.button("e",         "  New file" , ":ene<CR>"),
+      dashboard.button("<leader>ff","󰈞  Find file", ":Telescope find_files<CR>"),
+      dashboard.button("r",         "  Recent"   , ":Telescope oldfiles<CR>"),
+      dashboard.button("<C-b>",     "  File tree", ":Neotree filesystem reveal left<CR>"),
+      dashboard.button("q",         "󰅙  Quit NVIM", ":qa<CR>"),
+    }
+    require("alpha").setup(
+      dashboard.config
+    )
+  end,
+};

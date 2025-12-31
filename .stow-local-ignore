@@ -1,0 +1,11 @@
+# Git Stuffs
+
+.git
+.gitignore
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+unstaple		# copy paste 
+packages.md		# linux packages names
+baby.md			# baby
