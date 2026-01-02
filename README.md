@@ -3,24 +3,7 @@ Personal repo for Linux dotfiles.
 
 
 ## Package Installation
-Use this command to search for all apt packages manually installed.
-```bash
-grep ' install ' /var/log/apt/history.log* | awk '{print $4}' | sort | uniq
-```
-
-On 22 July 2025, these are all the packages installed and required for the setup:
-
-```
-eza, fzf, tmux, neovim, vim, trash-cli, alacritty, flatpak, 
-tlp, cmatrix, tldr, starship, yazi
-
-npm, wine, fd-find, xclip, xsel, wl-clipboard, tree, acpi, bat, stow
-
-imagemagick, tree-sitter, jq, socat, brightnessctl
-```
-
-List of useful packages: [dependencies.md](dependencies.md)
-
+Required packages and their dependencies: [dependencies.md](dependencies.md)
 
 ## Stow Setup
 After all packages are installed, You're ready to download the dotfiles. First, install `git` and `stow` using the package manager natively available.
