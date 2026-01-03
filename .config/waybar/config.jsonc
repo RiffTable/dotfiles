@@ -90,7 +90,7 @@
     "custom/gammastep": {
         "format": "{}",
         "exec": "pgrep -x gammastep >/dev/null && echo \" \" || echo \" \"",
-        "on-click": "pkill gammastep || gammastep -O 4200&",
+        "on-click": "pkill gammastep || gammastep -O 4200&",   // 4200 even in hyprconf
         "interval": 2,
         // "return-type": "string",
     },
