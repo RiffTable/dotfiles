@@ -43,8 +43,8 @@ map({'n','v','i'}, "<Home>", "^", {desc = "Jumps to the start of the line (inden
 map({'n','v','i'}, "<End>", "$",  {desc = "Jumps to the end of the line"})
 
 -- Home and End key
-map({'n','x','o'}, "H", "^", {noremap = true, desc = "Jumps to the start of the line (indent)"})
-map({'n','x','o'}, "L", "$", {noremap = true, desc = "Jumps to the end of the line"})
+-- map({'n','x','o'}, "H", "^", {noremap = true, desc = "Jumps to the start of the line (indent)"})
+-- map({'n','x','o'}, "L", "$", {noremap = true, desc = "Jumps to the end of the line"})
 -- map({'n','x','o'}, "M", "0", {noremap = true, desc = "Jumps to the start of the line"})
 
 --- Surround selection with braces/quotes

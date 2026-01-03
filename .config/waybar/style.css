@@ -1,7 +1,8 @@
 @define-color ws-active     #94e2d5;
 @define-color ws-inactive   #585b70;
 @define-color ws-hover      #dddddd;
-@define-color ws-urgent     #ff3333;
+@define-color ws-urgent     #fb2c36;
+@define-color ws-maximize   #dfe294;
 
 * {
     font-family: 'JetBrainsMono', 'Hack', 'Segoe UI', 'JetBrainsMono Nerd Font', sans-serif;
