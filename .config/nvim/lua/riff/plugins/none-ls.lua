@@ -8,7 +8,7 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.diagnostics.pylint,
+        -- null_ls.builtins.diagnostics.pylint, -- FUCK YOU. THIS THING SUCKS SO BAD
       },
     })
 

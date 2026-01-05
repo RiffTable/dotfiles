@@ -4,7 +4,7 @@ local servers = {
   "tailwindcss",
   "lua_ls",
   "clangd",
-  "pyright",
+  "basedpyright",
   "pylsp"
 }
 
@@ -75,7 +75,8 @@ return {
       end
 
 
-      -- vim API autocompletion 
+      -- Configuring one LSP at a time
+      -- Use vim.lsp.config instead of lspconfig 
       vim.lsp.config.lua_ls = {
         settings = {
           Lua = {
@@ -88,6 +89,33 @@ return {
             },
             diagnostics = {
               globals = { "vim" },
+            },
+          },
+        },
+      }
+      vim.lsp.config.basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+              typeCheckingMode = "basic", -- "standard" or "strict" if you want to be fancy
+            },
+          },
+        },
+      }
+      vim.lsp.config.pylsp = {
+        settings = {
+          pylsp = {
+            plugins = {
+              -- Disable these because Basedpyright or Ruff does them better
+              pyflakes = { enabled = false },
+              pycodestyle = { enabled = false },
+              mccabe = { enabled = false },
+              pydocstyle = { enabled = false },
+              -- Keep these if you want
+              jedi_completion = { enabled = true },
+              jedi_definition = { enabled = true },
             },
           },
         },
