@@ -50,6 +50,11 @@ icon_path = /usr/share/icons/Arc/status/96:/usr/share/icons/Arc/status/symbolic
 icon_corner_radius = 4
 
 ### Progress bar
+progress_bar = true
+# progress_bar_height = 10
+# progress_bar_min_width = 150
+# progress_bar_max_width = 300
+
 progress_bar_frame_width = 1
 progress_bar_corner_radius = 3
 

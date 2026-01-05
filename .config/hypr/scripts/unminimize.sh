@@ -8,8 +8,9 @@ hyprctl clients -j | jq -r '.[]
 | rofi -dmenu \
     -i -show-icons \
     -p "What to un-minimize?" \
-| rev \
-| cut -c2-15 \
-| rev \
+| sed -n 's/.*(\(.*\))/\1/p' \
 | xargs -r -I % hyprctl dispatch movetoworkspace +0,address:%
 # | xargs -r -I % rofi -e %
+# | rev \
+# | cut -c2-15 \
+# | rev \
