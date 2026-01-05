@@ -72,7 +72,7 @@ dmenu = rofi --show drun --prompt 'Open with'
 timeout = 3
 
 [urgency_normal]
-timeout = 8
+timeout = 5
 
 [urgency_critical]
 timeout = 0
