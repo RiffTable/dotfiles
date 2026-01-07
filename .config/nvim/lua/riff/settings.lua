@@ -18,7 +18,7 @@ option.termguicolors  = true
 option.mouse          = "a"
 
 option.smarttab			  = true
-option.expandtab		  = true
+option.expandtab		  = false
 option.autoindent		  = true
 option.tabstop			  = 4
 option.shiftwidth		  = 4

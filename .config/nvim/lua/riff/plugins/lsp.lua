@@ -167,10 +167,11 @@ return {
           end
 
           -- Buffer Local Mapping
-          map('n', 'gd', vim.lsp.buf.definition, {})
-          map('n', 'gD', vim.lsp.buf.declaration, {})
-          map('n', 'gi', vim.lsp.buf.implementation, {})
-          map('n', '<leader>r', vim.lsp.buf.rename, {})
+          map('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+          map('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaraction' })
+          map('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
+          map('n', '<leader>r', vim.lsp.buf.rename, { desc = 'LSP Rename' })
+          -- map('n', '<F2>', vim.lsp.buf.rename, { desc = 'LSP Rename' })
           map('n', '_', vim.lsp.buf.hover, {})
           map({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
         end
