@@ -22,15 +22,15 @@ inputbar {
 * {
     separatorcolor: transparent;
 
-    selected-normal-foreground: #e1e1e1;
-    selected-normal-background: rgba(255,255,255, 5%);
+    selected-normal-foreground : #e1e1e1;
+    selected-normal-background : rgba(255,255,255, 5%);
 
-    background: rgba(255,255,255, 0%);
-    normal-background: rgba(255,255,255, 0%);
-    alternate-normal-background: rgba(255,255,255, 0%);
+    background                 : transparent;
+    normal-background          : transparent;
+    alternate-normal-background: transparent;
     
-    foreground: #e1e1e1;
-    normal-foreground: #909090;
+    foreground                 : #e1e1e1;
+    normal-foreground          : #909090;
     alternate-normal-foreground: #909090;
 }
 
@@ -57,6 +57,7 @@ textbox {
 
 listview {
     lines: 8;
+	scrollbar: false;
 }
 
 element {
@@ -65,10 +66,4 @@ element {
     border-radius: 0px;
     children: [ element-icon, element-text ];
     spacing: 15px;
-}
-
-#scrollbar {
-    handle-color: #333333;
-    handle-width: 0px;
-    padding: 0;
 }
