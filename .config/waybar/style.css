@@ -3,6 +3,12 @@
 @define-color ws-hover      #dddddd;
 @define-color ws-urgent     #fb2c36;
 @define-color ws-maximize   #dfe294;
+@define-color bg-panel      #1a1b26;
+
+
+
+/* margin: 5px 0px; */
+/* 5px top-bottom, 0px left-right*/
 
 * {
     font-family: 'JetBrainsMono', 'Hack', 'Segoe UI', 'JetBrainsMono Nerd Font', sans-serif;
@@ -17,18 +23,21 @@
     margin: 0px;
     font-weight: 500;
 
-    background: rgba(20, 20, 20, 0.8);
+    background: rgba(20, 20, 20, 0.7);
     margin: 20px;
+
+	border-bottom: 3px;
+	border-color: @bg-panel;
+	border-style: solid;
 }
 
 
 /* MODULE: Workspaces */
 #workspaces {
-    background-color: #1a1b26;
-    /* padding: 0.3rem 0.7rem; */
-    margin: 5px 0px; /* 5px top-bottom, 0px left-right*/
+    background-color: @bg-panel;
+	margin-top: 5px;
     padding: 2px;
-    /* border-radius: 6px; */
+
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -39,12 +48,12 @@
 }
 #workspaces button {
     /* padding: 0 1rem; */
-    font-size: 0px;
-    min-width: 16px;
+    font-size: 1px;
+    min-width: 17px;
     min-height: 16px;
     border-radius: 100px;
     margin: 4px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in;
 
     background: @ws-inactive;
     border: 2px solid @ws-inactive;
@@ -70,7 +79,7 @@
 #pulseaudio,
 #network,
 #battery {
-    background-color: #1a1b26;
+    background-color: @bg-panel;
     padding: 0.3rem 0.7rem;
     margin: 5px 0px; 
     border-radius: 0;
@@ -87,7 +96,7 @@
 
 /* MODULE: Clock */
 #clock {
-    background-color: #1a1b26;
+    background-color: @bg-panel;
     color: #99d1db;
     padding: 0.3rem 0.7rem;
     margin: 5px 0px;
@@ -116,9 +125,6 @@
 #bluetooth {
     color: #888888;
     font-size: 16px;
-    margin-left: 0px; 
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
 }
 #bluetooth.on {
     color: #2196f3;
@@ -144,7 +150,7 @@
 
 /* --- Tooltip Styles --- */
 tooltip {
-    background-color: #1a1b26;
+    background-color: @bg-panel;
     color: #dddddd;
     padding: 5px 12px;
     margin: 5px 0px;

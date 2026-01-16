@@ -11,6 +11,12 @@ configuration {
     // scroll-method: 0: Per Page, 1: Continuous
     scroll-method: 1;
     cycle: false;
+	// modes: "drun, wifi: /home/riff/.config/rofi/rofi-wifi-menu";
+	modi: [
+		"drun"
+		// "wifi:~/.config/rofi/rofi-wifi-menu.sh"
+	];
+	show-icons: true;
 }
 
 inputbar {
