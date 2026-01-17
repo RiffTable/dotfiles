@@ -59,7 +59,7 @@
     min-height: 18px;
     border-radius: 100px;
     margin: 4px;
-    transition: all 0.15s ease-in;
+    transition: all 0.2s ease-in-out;
 
     background: @ws-inactive;
     border: 2px solid @ws-inactive;
@@ -78,9 +78,10 @@
 }
 
 /* --- ANIMATION --- */
-#pulseaudio,
-#network,
-#battery {
+/* #pulseaudio, */
+/* #network, */
+/* #battery { */
+.module {
     background-color: @bg-panel;
     padding: 0.3rem 0.7rem;
     border-radius: 0;
@@ -88,9 +89,10 @@
     border: none;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-#pulseaudio:hover,
-#network:hover,
-#battery:hover {
+/* #pulseaudio:hover, */
+/* #network:hover, */
+/* #battery:hover { */
+.module:hover {
     background-color: rgb(41, 42, 53);
 }
 
@@ -116,9 +118,7 @@
 #network {
     color: #c6d0f5;
 }
-#network.disconnected {
-    color: #e78284;
-}
+#network.disconnected	{ color: #e78284; }
 
 
 /* MODULE: Bluetooth */
@@ -126,27 +126,17 @@
     color: #888888;
     font-size: 16px;
 }
-#bluetooth.on {
-    color: #2196f3;
-}
-#bluetooth.connected {
-    color: #99d1db;
-}
+#bluetooth.on			{ color: #2196f3; }
+#bluetooth.connected	{ color: #99d1db; }
 
 
 /* MODULE: Battery */
 #battery {
     color: #99d1db;
 }
-#battery.charging {
-    color: #a6d189;
-}
-#battery.warning:not(.charging) {
-    color: #e78284;
-}
-#battery.critical:not(.charging) {
-    color: #e78284;
-}
+#battery.charging				{ color: #a6d189; }
+#battery.warning:not(.charging)	{ color: #e78284; }
+#battery.critical:not(.charging){ color: #e78284; }
 
 /* --- Tooltip Styles --- */
 tooltip {
@@ -154,7 +144,7 @@ tooltip {
     color: #dddddd;
     padding: 5px 12px;
     margin: 5px 0px;
-    border-radius: 6px;
+    border-radius: 2px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     font-size: 12px;
