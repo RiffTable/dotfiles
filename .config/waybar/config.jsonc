@@ -74,7 +74,7 @@
         }
     },
     "clock": {
-        "format": "{0:%I:%M}  {0:%a %d/%m/%y}",
+        "format": "{0:%I:%M %p}  {0:%a %d/%m/%y}",
         // Help: https://howardhinnant.github.io/date/date.html#to_stream_formatting
         // "locale": "en_BN.UTF-8",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -114,9 +114,9 @@
         // "format-icons": [" ", " ", " ", " ", " "],
     },
     "network": {
-        "format-wifi": "{bandwidthTotalBytes}  {icon}",
-        "format-ethernet": "{bandwidthTotalBytes}  󰈀",
-        "format-disconnected": "󰤮",
+        "format-wifi": "{bandwidthTotalBytes}  {icon} ",
+        "format-ethernet": "{bandwidthTotalBytes}  󰈀 ",
+        "format-disconnected": "󰤮 ",
         "format-linked": "(No IP)",
         "tooltip-format": "{essid} ({signalStrength}%)",
         "format-alt": "{essid} ({signalStrength}%)",

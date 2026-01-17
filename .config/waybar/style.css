@@ -7,15 +7,13 @@
 
 
 
-/* margin: 5px 0px; */
-/* 5px top-bottom, 0px left-right*/
+/* margin: VERTICAL HORIZONTAL; */
 
 * {
-    font-family: 'JetBrainsMono', 'Hack', 'Segoe UI', 'JetBrainsMono Nerd Font', sans-serif;
+    font-family: 'JetBrainsMono', 'JetBrainsMono Nerd Font', 'Segoe UI', sans-serif;
     font-size: 14px;
     min-height: 0;
     padding: 0px;
-    /* --workspace-active: rgb(148, 226, 213); */
 }
 #waybar {
     background: transparent;
@@ -25,17 +23,25 @@
 
     background: rgba(20, 20, 20, 0.7);
     margin: 20px;
+	/* padding: doesn't work here; */
 
 	border-bottom: 3px;
 	border-color: @bg-panel;
 	border-style: solid;
+	
+    /* border-top-left-radius: 16px; */
+    /* border-top-right-radius: 16px; */
 }
+
+
+.modules-left   { margin-top: 6px; margin-left: 10px; }
+.modules-center { margin-top: 6px; }
+.modules-right  { margin-top: 6px; margin-right:10px; }
 
 
 /* MODULE: Workspaces */
 #workspaces {
     background-color: @bg-panel;
-	margin-top: 5px;
     padding: 2px;
 
     border-top-left-radius: 10px;
@@ -49,8 +55,8 @@
 #workspaces button {
     /* padding: 0 1rem; */
     font-size: 1px;
-    min-width: 17px;
-    min-height: 16px;
+    min-width: 20px;
+    min-height: 18px;
     border-radius: 100px;
     margin: 4px;
     transition: all 0.15s ease-in;
@@ -59,20 +65,16 @@
     border: 2px solid @ws-inactive;
 }
 #workspaces button.empty {
-    background: none;
-    border-color: @ws-inactive;
+    background: none;			border-color: @ws-inactive;
 }
 #workspaces button.active {
-    background: @ws-active;
-    border-color: @ws-active;
+    background: @ws-active;		border-color: @ws-active;
 }
 #workspaces button:hover {
-    background: @ws-hover;
-    border-color: @ws-hover;
+    background: @ws-hover;		border-color: @ws-hover;
 }
 #workspaces button.urgent {
-    background: @ws-urgent;
-    border-color: @ws-urgent;
+    background: @ws-urgent;		border-color: @ws-urgent;
 }
 
 /* --- ANIMATION --- */
@@ -81,7 +83,6 @@
 #battery {
     background-color: @bg-panel;
     padding: 0.3rem 0.7rem;
-    margin: 5px 0px; 
     border-radius: 0;
     min-width: 0;
     border: none;
@@ -99,7 +100,6 @@
     background-color: @bg-panel;
     color: #99d1db;
     padding: 0.3rem 0.7rem;
-    margin: 5px 0px;
     font-weight: 500;
     min-width: 0;
     border: none;
