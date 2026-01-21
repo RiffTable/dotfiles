@@ -34,10 +34,43 @@
 }
 
 
-.modules-left   { margin-top: 5px; margin-left: 10px; }
-.modules-center { margin-top: 5px; }
-.modules-right  { margin-top: 5px; margin-right:10px; }
+.modules-left   { padding-top: 5px; /*margin-left: 10px;*/ }
+.modules-center { padding-top: 5px; }
+.modules-right  { padding-top: 5px; /*margin-right:10px;*/ }
 
+
+
+/* EMPTY MODULES */
+/*
+#custom-leftmost {
+	min-width: 30px;
+	border-top-left-radius: 30px;
+	box-shadow: -30px 0 0 0 #000;
+	background: none;
+	margin-top: -5px;
+	margin-right: -30px;
+}
+#custom-rightmost {
+	min-width: 30px;
+	border-top-right-radius: 30px;
+	box-shadow: +30px 0 0 0 #000;
+	background: none;
+	margin-top: -5px;
+	margin-left: -30px;
+}
+#custom-leftarch {
+	min-width: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 10px 0 0 0 @bg-panel;
+	background: none;
+}
+#custom-rightarch {
+	min-width: 10px;
+	border-bottom-left-radius: 10px;
+	box-shadow: -10px 0 0 0 @bg-panel;
+	background: none;
+}
+*/
 
 /* MODULE: Workspaces */
 #workspaces {
@@ -70,6 +103,7 @@
 }
 #workspaces button.active {
     background: @ws-active;		border-color: @ws-active;
+	min-width: 28px;
 }
 #workspaces button:hover {
     background: @ws-hover;		border-color: @ws-hover;

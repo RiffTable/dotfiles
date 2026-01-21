@@ -6,12 +6,15 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
+		"custom/leftmost",
         "sway/window",
         "custom/spotify"
         // "wlr/taskbar",
     ],
     "modules-center": [
+		"custom/leftarch",
         "hyprland/workspaces",
+		"custom/rightarch",
     ],
     "modules-right": [
         "custom/gammastep",
@@ -22,7 +25,24 @@
         "clock",
         "tray",
         "custom/power",
+		"custom/rightmost",
     ],
+	// "custom/leftmost": {
+	// 	"format": " ",
+	// 	"tooltip": false
+	// },
+	// "custom/rightmost": {
+	// 	"format": " ",
+	// 	"tooltip": false
+	// },
+	// "custom/leftarch": {
+	// 	"format": " ",
+	// 	"tooltip": false
+	// },
+	// "custom/rightarch": {
+	// 	"format": " ",
+	// 	"tooltip": false
+	// },
     // "group/hardware": {
     //     "orientation": "vertical",
     //     "modules": [
