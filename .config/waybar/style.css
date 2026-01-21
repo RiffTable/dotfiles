@@ -11,7 +11,7 @@
 
 * {
     font-family: 'JetBrainsMono', 'JetBrainsMono Nerd Font', 'Segoe UI', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     min-height: 0;
     padding: 0px;
 }
@@ -19,7 +19,7 @@
     background: transparent;
     color: #c6d0f5;
     margin: 0px;
-    font-weight: 500;
+    font-weight: 800;
 
     background: rgba(20, 20, 20, 0.7);
     margin: 20px;
@@ -34,43 +34,11 @@
 }
 
 
-.modules-left   { padding-top: 5px; /*margin-left: 10px;*/ }
+.modules-left   { padding-left: 10px; }
 .modules-center { padding-top: 5px; }
-.modules-right  { padding-top: 5px; /*margin-right:10px;*/ }
+.modules-right  { padding-right: 10px; }
 
 
-
-/* EMPTY MODULES */
-/*
-#custom-leftmost {
-	min-width: 30px;
-	border-top-left-radius: 30px;
-	box-shadow: -30px 0 0 0 #000;
-	background: none;
-	margin-top: -5px;
-	margin-right: -30px;
-}
-#custom-rightmost {
-	min-width: 30px;
-	border-top-right-radius: 30px;
-	box-shadow: +30px 0 0 0 #000;
-	background: none;
-	margin-top: -5px;
-	margin-left: -30px;
-}
-#custom-leftarch {
-	min-width: 10px;
-	border-bottom-right-radius: 10px;
-	box-shadow: 10px 0 0 0 @bg-panel;
-	background: none;
-}
-#custom-rightarch {
-	min-width: 10px;
-	border-bottom-left-radius: 10px;
-	box-shadow: -10px 0 0 0 @bg-panel;
-	background: none;
-}
-*/
 
 /* MODULE: Workspaces */
 #workspaces {
@@ -118,7 +86,7 @@
 /* #battery { */
 .module {
     background-color: @bg-panel;
-    padding: 0.3rem 0.7rem;
+    padding: 0.2rem 0.7rem;
     border-radius: 0;
     min-width: 0;
     border: none;
@@ -130,6 +98,9 @@
 .module:hover {
     background-color: rgb(41, 42, 53);
 }
+/* .module label { */
+/* 	-gtk-label-align: 0.5; */
+/* } */
 
 
 /* MODULE: Clock */

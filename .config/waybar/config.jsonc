@@ -6,7 +6,6 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
-		"custom/leftmost",
         "sway/window",
         "custom/spotify"
         // "wlr/taskbar",
@@ -25,24 +24,7 @@
         "clock",
         "tray",
         "custom/power",
-		"custom/rightmost",
     ],
-	// "custom/leftmost": {
-	// 	"format": " ",
-	// 	"tooltip": false
-	// },
-	// "custom/rightmost": {
-	// 	"format": " ",
-	// 	"tooltip": false
-	// },
-	// "custom/leftarch": {
-	// 	"format": " ",
-	// 	"tooltip": false
-	// },
-	// "custom/rightarch": {
-	// 	"format": " ",
-	// 	"tooltip": false
-	// },
     // "group/hardware": {
     //     "orientation": "vertical",
     //     "modules": [
@@ -94,7 +76,8 @@
         }
     },
     "clock": {
-        "format": "{0:%I:%M %p}  {0:%a %d/%m/%y}",
+		"justify": "center",
+        "format": "{0:%I:%M%p}\n{0:%d %b} ({0:%a})",
         // Help: https://howardhinnant.github.io/date/date.html#to_stream_formatting
         // "locale": "en_BN.UTF-8",
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -124,14 +107,16 @@
             "on-discharging-critical": "notify-send -u critical \"Very Low Battery\"",
             "on-charging-100": "notify-send -u normal \"Battery Full\""
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% {icon}󱐋",
+		"justify": "center",
         "tooltip-format": "{time}",
-        "format-full": "{capacity}% {icon}",
-        "format-plugged": "{capacity}% ",
 
-        "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
-        // "format-icons": [" ", " ", " ", " ", " "],
+        "format": "{icon}\n{capacity}",
+        "format-charging": "{icon}󱐋\n{capacity}",
+        "format-full": "{icon}\n{capacity}",
+        "format-plugged": "\n{capacity}",
+
+        // "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
+        "format-icons": [" ", " ", " ", " ", " "],
     },
     "network": {
         "format-wifi": "{bandwidthTotalBytes}  {icon} ",
@@ -154,6 +139,13 @@
 
         "format-source": " {volume}% ",
         "format-source-muted": " ",
+        // "format": "{volume}% {icon} {format_source}",
+        // "format-bluetooth": "{volume}% {icon} {format_source}",
+        // "format-bluetooth-muted": "  {format_source}",
+        // "format-muted": " {format_source}",
+        //
+        // "format-source": " {volume}% ",
+        // "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
             "hands-free": "󰋎",
