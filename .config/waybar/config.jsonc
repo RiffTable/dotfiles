@@ -17,7 +17,8 @@
     ],
     "modules-right": [
         "custom/gammastep",
-        "pulseaudio",
+		"pulseaudio#sink",
+		"pulseaudio#source",
         "network",
         "keyboard-state",
         "battery",
@@ -130,22 +131,22 @@
         // {bandwidthUpBytes}: Instant up speed in bytes/seconds.
         // {bandwidthDownBytes}: Instant down speed in bytes/seconds.
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "  {format_source}",
-        "format-muted": " {format_source}",
+	"pulseaudio#source": {
+		"justify": "center",
+		"format": "{format_source}",
+		"format-source": "\n{volume}",
+        "format-source-muted": "",
 
-        "format-source": " {volume}% ",
-        "format-source-muted": " ",
-        // "format": "{volume}% {icon} {format_source}",
-        // "format-bluetooth": "{volume}% {icon} {format_source}",
-        // "format-bluetooth-muted": "  {format_source}",
-        // "format-muted": " {format_source}",
-        //
-        // "format-source": " {volume}% ",
-        // "format-source-muted": " ",
+        "on-click": "pavucontrol",
+	},
+	"pulseaudio#sink": {
+        // "scroll-step": 1, // %, can be a float
+		"justify": "center",
+        "format": "{icon}\n{volume}",
+        "format-bluetooth": "{icon}\n{volume}",
+        "format-bluetooth-muted": " ",
+        "format-muted": " ",
+
         "format-icons": {
             "headphone": "",
             "hands-free": "󰋎",
@@ -155,7 +156,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
     },
     "custom/power": {
         "format": "⏻ ",

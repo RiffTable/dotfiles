@@ -35,7 +35,7 @@
 
 
 .modules-left   { padding-left: 10px; }
-.modules-center { padding-top: 5px; }
+.modules-center { padding-top: 8px; }
 .modules-right  { padding-right: 10px; }
 
 
@@ -55,8 +55,8 @@
 }
 #workspaces button {
     /* padding: 0 1rem; */
-    min-width: 14px;
-    min-height: 14px;
+    min-width: 18px;
+    min-height: 18px;
     border-radius: 100px;
     margin: 4px;
     transition: all 0.2s ease-in-out;
@@ -71,7 +71,7 @@
 }
 #workspaces button.active {
     background: @ws-active;		border-color: @ws-active;
-	min-width: 28px;
+	min-width: 36px;
 }
 #workspaces button:hover {
     background: @ws-hover;		border-color: @ws-hover;
@@ -102,6 +102,11 @@
 /* 	-gtk-label-align: 0.5; */
 /* } */
 
+
+/* MODULE: Spotify */
+#custom-spotify {
+	background: none;
+}
 
 /* MODULE: Clock */
 #clock {
