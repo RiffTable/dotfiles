@@ -1,69 +1,85 @@
-entry {
-    placeholder: "";
-    text-color: #dddddd;
-    padding: 2px;
-}
-
 configuration {
+	placeholder: "";
     font: "Hack Regular 12";
     fixed-num-lines: true;
     padding: 10px;
-    // scroll-method: 0: Per Page, 1: Continuous
-    scroll-method: 1;
+    scroll-method: 1;    // 0: Per Page, 1: Continuous
     cycle: false;
-	// modes: "drun, wifi: /home/riff/.config/rofi/rofi-wifi-menu";
-	modi: [
-		"drun"
-		// "wifi:~/.config/rofi/rofi-wifi-menu.sh"
-	];
-	show-icons: true;
+    // modi: [
+    //  "drun"
+    //  // ,"wifi:~/.config/rofi/rofi-wifi-menu.sh"
+    // ];
+    show-icons: true;
+    display-drun: "󰀻 Apps";
+    display-wifi: " Wifi";
+    display-window: " Windows";
 }
 
-inputbar {
-    padding: 10px;
-    // background-color: rgba(49, 50, 68, 20%);
-    children: [entry];
-}
-
+@import "colors.rasi"
 * {
     separatorcolor: transparent;
 
-    selected-normal-foreground : #e1e1e1;
-    selected-normal-background : rgba(255,255,255, 5%);
+    selected-normal-foreground : var(fg-active);
+    selected-normal-background : var(highlight);
 
     background                 : transparent;
     normal-background          : transparent;
     alternate-normal-background: transparent;
     
-    foreground                 : #e1e1e1;
-    normal-foreground          : #909090;
-    alternate-normal-foreground: #909090;
+    foreground                 : var(fg-active);
+    normal-foreground          : var(fg-inactive);
+    alternate-normal-foreground: var(fg-inactive);
 }
 
 window {
+    location: center;
+    anchor: center;
+    width: 30%;
+
     border-radius: 11px;
     border: 1px solid;
-    border-color: #181825;
-    background-color: #181825;
+    border-color: var(border-color);
+    background-color: var(border-color);
     padding: 0px;
-    width: 30%;
 }
 
 mainbox {
     border: 2px;
-    // border-color: rgba(255,255,255, 20%);
-    border-color: #1e1e2e;
+    border-color: var(bg-color);
     border-radius: 10px;
     padding: 0px;
 }
 
+
+
+/*** WIDGET: INPUTBAR ***/
+inputbar {
+    padding: 10px;
+    children: ["entry", "prompt"];
+}
+
+entry {
+    placeholder: "";
+    text-color: var(fg-active);
+    padding: 2px;
+}
+prompt {
+    enabled: true;
+}
+
+
+
+/*** WIDGET: MESSAGE ***/
 textbox {
     padding: 10px;
 }
 
+
+
+/*** WIDGET: LISTVIEW ***/
 listview {
     lines: 8;
-	scrollbar: false;
+    scrollbar: false;
 }
 
 element {

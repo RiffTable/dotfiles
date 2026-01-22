@@ -1,0 +1,9 @@
+/* COLOR PALETTE */
+
+* {
+	fg-active: #E1E1E1FF;
+	fg-inactive: #909090FF;
+	border-color: #181825FF;
+	bg-color: #1E1E2EFF;
+	highlight: #FFFFFF0C;
+}
