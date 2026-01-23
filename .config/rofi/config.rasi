@@ -89,3 +89,7 @@ element {
     children: [ element-icon, element-text ];
     spacing: 15px;
 }
+
+element-text {
+	highlight: bold underline #E1E1E1;
+}
