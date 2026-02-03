@@ -7,7 +7,8 @@ hyprctl clients -j | jq -r '.[]
   | "\(.class): \(.title) (\(.address))\u0000icon\u001f\(.class)"' \
 | rofi -dmenu \
     -i -show-icons \
-    -p "What to un-minimize?" \
+	-theme-str 'entry { placeholder: "What to un-minimize?"; }' \
+    -p "unmin" \
 | sed -n 's/.*(\(.*\))/\1/p' \
 | xargs -r -I % hyprctl dispatch movetoworkspace +0,address:%
 # | xargs -r -I % rofi -e %
