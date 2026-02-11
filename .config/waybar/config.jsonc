@@ -93,7 +93,7 @@
     "custom/gammastep": {
         "format": "{}",
         "tooltip": false,
-        "exec": "pgrep -x gammastep >/dev/null && echo \"<big></big> \" || echo \"<big></big> \"",
+        "exec": "pgrep -x gammastep >/dev/null && echo \"<big>󰖚</big> \" || echo \"<big>󰖙</big> \"",
         "on-click": "pkill gammastep || gammastep -O 4200&",   // 4200 even in hyprconf
         "interval": 2,
         // "return-type": "string",
@@ -148,14 +148,14 @@
 	"pulseaudio#sink": {
         // "scroll-step": 1, // %, can be a float
 		"justify": "center",
-        "format": "{icon} {volume}",
+        "format": "{icon}  {volume}",
         "format-muted": " ",
 
         "format-icons": { "default": ["", "", ""] },
         "on-click": "pavucontrol",
     },
     "custom/power": {
-        "format": " ",
+        "format": " ",
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
