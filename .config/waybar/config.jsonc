@@ -81,6 +81,7 @@
     "clock#time": {
 		"justify": "center",
         "format": "{0:%I:%M %p}",
+        "tooltip-format": "time",
     },
     "clock#date": {
 		"justify": "center",

@@ -4,6 +4,7 @@
 @define-color ws-urgent     #fb2c36;
 @define-color ws-maximize   #dfe294;
 @define-color bg-panel      #1a1b26;
+@define-color bg-glass      #1a1b26;
 @define-color sel-hover     #dddddd;
 @define-color fg-critical   #e78284;
 
@@ -14,7 +15,6 @@
 
 * {
     font-family: 'JetBrainsMono', 'JetBrainsMono Nerd Font', 'Segoe UI', sans-serif;
-    /* font-family: 'Ubuntu'; */
     font-size: 14px;
     min-height: 0;
     padding: 0px;
@@ -23,34 +23,37 @@
     background: transparent;
     color: #c6d0f5;
     margin: 0px;
-    font-weight: 800;
+    font-weight: 500;
 
-    background: rgba(20, 20, 20, 0.7);
-    margin: 20px;
+    background: alpha(@bg-glass, 0.6);
+    /* margin: 20px; */
 	/* padding doesn't work here; Using modules */
 
-	border-bottom: 3px;
-	border-color: @bg-panel;
-	border-style: solid;
-	
-    /* border-top-left-radius: 16px; */
-    /* border-top-right-radius: 16px; */
+	/* border-bottom: 3px; */
+	/* border-color: @bg-panel; */
+	/* border-style: solid; */
 }
 
 
-.modules-left   {
-	padding-left: 10px;
-    background-color: @bg-panel;
-    border-radius: 0;
-    border: none;
+.modules-left {
+	padding-left: 30px;
+	padding-right: 10px;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 .modules-center {
-	padding-top: 8px;
+	padding-top: 6px;
 }
-.modules-right  {
-	padding-right: 10px;
-    background-color: @bg-panel;
-    border-radius: 0;
+.modules-right {
+	padding-left: 10px;
+	padding-right: 30px;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+}
+.modules-left, .modules-right {
+    /* background-color: @bg-panel; */
+    background-color: alpha(@bg-panel, 0.9);
+    /* border-radius: 0; */
     border: none;
 }
 
@@ -58,11 +61,12 @@
 
 /* MODULE: Workspaces */
 #workspaces {
-    background-color: @bg-panel;
-    padding: 2px;
+    /* background-color: @bg-panel; */
+    background-color: alpha(@bg-panel, 0.9);
+    padding: 2px 2px;
 
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     min-width: 0;
     border: none;
@@ -113,6 +117,10 @@
 }
 
 
+/* --- ICON MODULES --- */
+
+
+
 /* MODULE: Spotify */
 #custom-spotify {
 	background: none;
@@ -120,12 +128,13 @@
 
 /* MODULE: Clock */
 #clock {
-    padding: 0.3rem 0.7rem;
-    font-weight: 500;
+    /* padding: 0.3rem 0.7rem; */
+    /* font-weight: 500; */
     min-width: 0;
-    /* border: none; */
 }
-
+#clock.date {
+	opacity: 0.8;
+}
 
 /* MODULE: Pulse Audio */
 #pulseaudio {
@@ -161,5 +170,7 @@ tooltip {
     border-radius: 2px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+tooltip label {
     font-size: 12px;
 }
