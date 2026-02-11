@@ -14,15 +14,16 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "custom/gammastep",
 		"pulseaudio#sink",
         "keyboard-state",
         "battery",
+		"custom/separator",
         "clock#time",
         "clock#date",
-		// "custom/separator",
+		"custom/separator",
 		"pulseaudio#source",
 		"bluetooth",
+        "custom/gammastep",
         "network",
         "custom/power",
     ],
@@ -32,13 +33,6 @@
     //          "cpu",
     //          "memory",
     //     ]
-    // },
-    // "cpu": {
-    //     "format": "{usage}% ",
-    //     "tooltip": false
-    // },
-    // "memory": {
-    //     "format": "{}% "
     // },
     // "wlr/taskbar": {
     //     "format": "{icon}",
@@ -84,7 +78,7 @@
     },
     "clock#date": {
 		"justify": "center",
-        "format": "{0:%a %d %b}",
+        "format": " {0:%a %d %b}",
         "tooltip-format": "<tt>{calendar}</tt>",
     },
     "custom/spotify": {
@@ -99,7 +93,7 @@
     "custom/gammastep": {
         "format": "{}",
         "tooltip": false,
-        "exec": "pgrep -x gammastep >/dev/null && echo \" \" || echo \" \"",
+        "exec": "pgrep -x gammastep >/dev/null && echo \"<big></big> \" || echo \"<big></big> \"",
         "on-click": "pkill gammastep || gammastep -O 4200&",   // 4200 even in hyprconf
         "interval": 2,
         // "return-type": "string",
@@ -146,28 +140,18 @@
 	"pulseaudio#source": {
 		"justify": "center",
 		"format": "{format_source}",
-		"format-source": "",
-        "format-source-muted": "",
+		"format-source": "",
+        "format-source-muted": "  ",
 
         "on-click": "pavucontrol",
 	},
 	"pulseaudio#sink": {
         // "scroll-step": 1, // %, can be a float
 		"justify": "center",
-        "format": "{icon} {volume}",
-        // "format-bluetooth": "󰂰 <small>{volume}</small>",
-        // "format-bluetooth-muted": " ",
-        "format-muted": " ",
+        "format": "{icon} {volume}",
+        "format-muted": " ",
 
-        "format-icons": {
-            // "headphone": "",
-            // "hands-free": "󰋎",
-            // "headset": "󰋎",
-            // "phone": "",
-            // "portable": "",
-            // "car": "",
-            "default": ["", "", ""]
-        },
+        "format-icons": { "default": ["", "", ""] },
         "on-click": "pavucontrol",
     },
     "custom/power": {
@@ -193,43 +177,14 @@
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
 	},
     "custom/separator": {
-        "format": " | ",
+        "format": "  ",
         "interval": "once",
     },
-    // "mpd": {
-    //     "host": "127.0.0.1",
-    //     "port": 6600,
-    //
-    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    //     "format-disconnected": "Disconnected ",
-    //     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    //     "unknown-tag": "N/A",
-    //     "interval": 5,
-    //     "consume-icons": {
-    //         "on": " "
-    //     },
-    //     "random-icons": {
-    //         "off": "<span color=\"#f53c3c\"></span> ",
-    //         "on": " "
-    //     },
-    //     "repeat-icons": {
-    //         "on": " "
-    //     },
-    //     "single-icons": {
-    //         "on": "1 "
-    //     },
-    //     "state-icons": {
-    //         "paused": "",
-    //         "playing": ""
-    //     },
-    //     "tooltip-format": "MPD (connected)",
-    //     "tooltip-format-disconnected": "MPD (disconnected)"
-    // },
-    // "tray": {
-    //     // "icon-size": 21,
-    //     "spacing": 10,
-    //     "icons": {
-    //       "blueman": "bluetooth",
-    //     }
-    // },
+	// "tray": {
+	//     // "icon-size": 21,
+	//     "spacing": 10,
+	//     "icons": {
+	//       "blueman": "bluetooth",
+	//     }
+	// },
 }

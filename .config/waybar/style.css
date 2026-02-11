@@ -16,7 +16,7 @@
 
 * {
     font-family: 'JetBrainsMono', 'JetBrainsMono Nerd Font', 'Segoe UI', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     min-height: 0;
     padding: 0px;
 }
@@ -100,10 +100,10 @@
 /* --- ANIMATION --- */
 #clock,
 
-#custom-gammastep,
 #battery,
 #pulseaudio,
 #bluetooth,
+#custom-gammastep,
 #network,
 #custom-power {
     /* background-color: @bg-panel; */
@@ -118,10 +118,10 @@
 
 #clock:hover,
 
-#custom-gammastep:hover,
 #battery:hover,
 #pulseaudio:hover,
 #bluetooth:hover,
+#custom-gammastep:hover,
 #network:hover,
 #custom-power:hover {
     /* background-color: rgb(41, 42, 53); */
@@ -132,14 +132,15 @@
 
 
 /* --- ICON MODULES --- */
-#custom-gammastep,
 #battery,
 #pulseaudio,
 #bluetooth,
+#custom-gammastep,
 #network,
 #custom-power {
 	font-size: 16px;
-	min-width: 20px;
+	/* min-width: 20px; */
+	padding: 5px;
 }
 
 
@@ -156,11 +157,11 @@
     min-width: 0;
 }
 #clock.time {
-	font-size: 15px;
-    font-weight: 400;
+	/* font-size: 15px; */
 }
 #clock.date {
 	opacity: 0.8;
+    font-weight: 300;
 }
 
 /* MODULE: Pulse Audio */
@@ -189,10 +190,10 @@
 
 /* --- Tooltip Styles --- */
 #custom-separator {
-	background-color: @fg-color;
-	padding: 0;
-	font-size: 0px;
-	min-width: 2px;
+	/* background-color: @fg-color; */
+	/* padding: 0; */
+	/* font-size: 0px; */
+	/* min-width: 2px; */
 }
 
 /* --- Tooltip Styles --- */
