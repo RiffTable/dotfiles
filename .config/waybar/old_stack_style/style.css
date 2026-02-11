@@ -38,21 +38,9 @@
 }
 
 
-.modules-left   {
-	padding-left: 10px;
-    background-color: @bg-panel;
-    border-radius: 0;
-    border: none;
-}
-.modules-center {
-	padding-top: 8px;
-}
-.modules-right  {
-	padding-right: 10px;
-    background-color: @bg-panel;
-    border-radius: 0;
-    border: none;
-}
+.modules-left   { padding-left: 10px; }
+.modules-center { padding-top: 14px; }
+.modules-right  { padding-right: 10px; }
 
 
 
@@ -98,12 +86,12 @@
 
 /* --- ANIMATION --- */
 .module {
-    /* background-color: @bg-panel; */
+    background-color: @bg-panel;
     /* padding: 0.2rem 0.7rem; */
-    /* border-radius: 0; */
-    /* min-width: 0; */
-    /* border: none; */
-    padding: 0px 0.4rem;
+    padding: 0px 0.7rem;
+    border-radius: 0;
+    min-width: 0;
+    border: none;
     transition: background-color, border 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
@@ -134,9 +122,7 @@
 
 
 /* MODULE: Network */
-#network {
-	color: #c6d0f5;
-}
+#network                { color: #c6d0f5; }
 #network.disconnected	{ color: @fg-critical; }
 
 

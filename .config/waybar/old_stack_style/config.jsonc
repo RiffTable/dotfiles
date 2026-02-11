@@ -22,8 +22,7 @@
         "network",
         "keyboard-state",
         "battery",
-        "clock#time",
-        "clock#date",
+        "clock",
         "tray",
         "custom/power",
     ],
@@ -77,14 +76,11 @@
             "empty": "",
         }
     },
-	// Help: https://howardhinnant.github.io/date/date.html#to_stream_formatting
-    "clock#time": {
+    "clock": {
 		"justify": "center",
-        "format": "{0:%I:%M %p}",
-    },
-    "clock#date": {
-		"justify": "center",
-        "format": "{0:%a %d %b}",
+        "format": "{0:%I:%M%p}\n<small>{0:%d %b} ({0:%a})</small>",
+        // Help: https://howardhinnant.github.io/date/date.html#to_stream_formatting
+        // "locale": "en_BN.UTF-8",
         "tooltip-format": "<tt>{calendar}</tt>",
     },
     "custom/spotify": {
@@ -115,23 +111,20 @@
 		"justify": "center",
         "tooltip-format": "{time}",
 
-        "format":                   "{icon} {capacity}",
-        "format-charging":          "{icon}󱐋 {capacity}",
-        "format-full":              "󱟢 {capacity}",
-		"format-charging-warning":  "󱟩 {capacity}",
-		"format-charging-critical": "󱉞 {capacity}",
-        // "format-plugged": "<big></big> {capacity}",
+        "format": "{icon}\n<small>{capacity}</small>",
+        "format-charging": "{icon}󱐋\n<small>{capacity}</small>",
+        "format-full": "{icon}\n<small>{capacity}</small>",
+        "format-plugged": "\n<small>{capacity}</small>",
 
+        // "format-icons": ["󰂎 ", "󱊡 ", "󱊢 ", "󱊣 "],
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        // "format-icons": ["󰂎", "󱊡", "󱊢", "󱊣"],
         // "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
         // "format-icons": [" ", " ", " ", " ", " "],
     },
     "network": {
-		// "justify": "center",
-        "format-wifi": "{icon}   ",
-        "format-ethernet": "󰈀   ",
-        "format-disconnected": "󰤮   ",
+        "format-wifi": "{bandwidthTotalBytes}  {icon} ",
+        "format-ethernet": "{bandwidthTotalBytes}  󰈀 ",
+        "format-disconnected": "󰤮 ",
         "format-linked": "(No IP)",
         "tooltip-format": "{essid} ({signalStrength}%)",
         "format-alt": "{essid} ({signalStrength}%)",
@@ -143,7 +136,7 @@
 	"pulseaudio#source": {
 		"justify": "center",
 		"format": "{format_source}",
-		"format-source": "",
+		"format-source": "\n<small>{volume}</small>",
         "format-source-muted": "",
 
         "on-click": "pavucontrol",
@@ -218,5 +211,13 @@
     //     "icons": {
     //       "blueman": "bluetooth",
     //     }
+    // },
+    // "temperature": {
+    //     // "thermal-zone": 2,
+    //     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    //     "critical-threshold": 80,
+    //     // "format-critical": "{temperatureC}°C {icon}",
+    //     "format": "{temperatureC}°C {icon}",
+    //     "format-icons": ["", "", ""]
     // },
 }

@@ -25,7 +25,7 @@ vim.keymap.set('i', '<F1>', '<Nop>')
 map('n', '<Esc><Esc>', ':nohlsearch<CR>', {desc = "Hide search highlights"});
 map('i', "jj", "<Esc>", {desc = "Exits insert mode without Esc or ctrl+["})
 -- map('n', "K", "kJ", {desc = "Join N lines; default is 2"})
-map('n', "<Enter>", "o<Esc>", {desc = "Create newline after the current line"})
+-- map('n', "<Enter>", "o<Esc>", {desc = "Create newline after the current line"})
 
 map('n', '<leader>bn', ':bnext<CR>', {desc = "Switch to the next buffer"})
 map('n', '<leader>bp', ':bprevious<CR>', {desc = "Switch to the previous buffer"})
