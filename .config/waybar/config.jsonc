@@ -4,27 +4,26 @@
     "position": "top",
     // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 0, // Gaps between modules (4px)
     "modules-left": [
-        "sway/window",
-        "custom/spotify"
         // "wlr/taskbar",
+        "tray",
+        "custom/spotify"
     ],
     "modules-center": [
-		"custom/leftarch",
-        "hyprland/workspaces",
-		"custom/rightarch",
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "custom/gammastep",
 		"pulseaudio#sink",
-		"pulseaudio#source",
-        "network",
         "keyboard-state",
         "battery",
         "clock#time",
         "clock#date",
-        "tray",
+		// "custom/separator",
+		"pulseaudio#source",
+		"bluetooth",
+        "network",
         "custom/power",
     ],
     // "group/hardware": {
@@ -80,8 +79,8 @@
 	// Help: https://howardhinnant.github.io/date/date.html#to_stream_formatting
     "clock#time": {
 		"justify": "center",
+        "tooltip": false,
         "format": "{0:%I:%M %p}",
-        "tooltip-format": "time",
     },
     "clock#date": {
 		"justify": "center",
@@ -90,6 +89,7 @@
     },
     "custom/spotify": {
         "format": "{}",
+        "tooltip": false,
         "exec": "playerctl metadata --format '  {{ artist }} - {{ title }}'",
         "exec-if": "pgrep spotify",
         "max-length": 40,
@@ -98,6 +98,7 @@
     },
     "custom/gammastep": {
         "format": "{}",
+        "tooltip": false,
         "exec": "pgrep -x gammastep >/dev/null && echo \" \" || echo \" \"",
         "on-click": "pkill gammastep || gammastep -O 4200&",   // 4200 even in hyprconf
         "interval": 2,
@@ -134,10 +135,11 @@
         "format-ethernet": "󰈀   ",
         "format-disconnected": "󰤮   ",
         "format-linked": "(No IP)",
-        "tooltip-format": "{essid} ({signalStrength}%)",
+        "tooltip-format": "{essid} ({signalStrength}%)\n{ifname} {gwaddr}",
         "format-alt": "{essid} ({signalStrength}%)",
         "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
         "interval": 5,
+
         // {bandwidthUpBytes}: Instant up speed in bytes/seconds.
         // {bandwidthDownBytes}: Instant down speed in bytes/seconds.
     },
@@ -152,18 +154,18 @@
 	"pulseaudio#sink": {
         // "scroll-step": 1, // %, can be a float
 		"justify": "center",
-        "format": "{icon}\n<small>{volume}</small>",
-        "format-bluetooth": "{icon}\n<small>{volume}</small>",
-        "format-bluetooth-muted": " ",
+        "format": "{icon} {volume}",
+        // "format-bluetooth": "󰂰 <small>{volume}</small>",
+        // "format-bluetooth-muted": " ",
         "format-muted": " ",
 
         "format-icons": {
-            "headphone": "",
-            "hands-free": "󰋎",
-            "headset": "󰋎",
-            "phone": "",
-            "portable": "",
-            "car": "",
+            // "headphone": "",
+            // "hands-free": "󰋎",
+            // "headset": "󰋎",
+            // "phone": "",
+            // "portable": "",
+            // "car": "",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
@@ -180,7 +182,17 @@
             "hibernate": "systemctl hibernate"
         }
     },
-    "custom/seperator": {
+	"bluetooth": {
+		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+		"format": "<big>󰂯</big>",
+		"format-disabled": "",
+		"format-connected": "<big>󰂱</big>",
+
+		"tooltip-format": "{controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+	},
+    "custom/separator": {
         "format": " | ",
         "interval": "once",
     },

@@ -4,8 +4,9 @@
 @define-color ws-urgent     #fb2c36;
 @define-color ws-maximize   #dfe294;
 @define-color bg-panel      #1a1b26;
-@define-color bg-glass      #1a1b26;
+@define-color bg-glass      #393939;
 @define-color sel-hover     #dddddd;
+@define-color fg-color      #c6d0f5;
 @define-color fg-critical   #e78284;
 
 
@@ -25,20 +26,20 @@
     margin: 0px;
     font-weight: 500;
 
-    background: alpha(@bg-glass, 0.6);
+    background: alpha(@bg-glass, 0.5);
     /* margin: 20px; */
 	/* padding doesn't work here; Using modules */
 
-	/* border-bottom: 3px; */
-	/* border-color: @bg-panel; */
-	/* border-style: solid; */
+	border-bottom: 3px;
+	border-color: alpha(@bg-panel, 0.6);
+	border-style: solid;
 }
 
 
 .modules-left {
 	padding-left: 30px;
 	padding-right: 10px;
-	border-top-right-radius: 30px;
+	border-top-right-radius:    20px;
 	border-bottom-right-radius: 30px;
 }
 .modules-center {
@@ -47,13 +48,11 @@
 .modules-right {
 	padding-left: 10px;
 	padding-right: 30px;
-	border-top-left-radius: 30px;
-	border-bottom-left-radius: 30px;
+	border-top-left-radius:     30px;
+	border-bottom-left-radius:  30px;
 }
 .modules-left, .modules-right {
-    /* background-color: @bg-panel; */
     background-color: alpha(@bg-panel, 0.9);
-    /* border-radius: 0; */
     border: none;
 }
 
@@ -61,14 +60,12 @@
 
 /* MODULE: Workspaces */
 #workspaces {
-    /* background-color: @bg-panel; */
     background-color: alpha(@bg-panel, 0.9);
     padding: 2px 2px;
 
+	border-radius: 0px;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    min-width: 0;
     border: none;
     /* Transition for background-color and color only */
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -101,29 +98,55 @@
 }
 
 /* --- ANIMATION --- */
-.module {
+#clock,
+
+#custom-gammastep,
+#battery,
+#pulseaudio,
+#bluetooth,
+#network,
+#custom-power {
     /* background-color: @bg-panel; */
     /* padding: 0.2rem 0.7rem; */
     /* border-radius: 0; */
     /* min-width: 0; */
     /* border: none; */
     padding: 0px 0.4rem;
-    transition: background-color, border 0.2s ease-in-out, color 0.2s ease-in-out;
+	border-radius: 10px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.module:hover {
-    background-color: rgb(41, 42, 53);
-	border-bottom: 2px @sel-hover solid;
+#clock:hover,
+
+#custom-gammastep:hover,
+#battery:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#custom-power:hover {
+    /* background-color: rgb(41, 42, 53); */
+	/* border-bottom: 2px @sel-hover solid; */
+	background-color: antiquewhite;
+	color: black;
 }
 
 
 /* --- ICON MODULES --- */
-
+#custom-gammastep,
+#battery,
+#pulseaudio,
+#bluetooth,
+#network,
+#custom-power {
+	font-size: 16px;
+	min-width: 20px;
+}
 
 
 /* MODULE: Spotify */
 #custom-spotify {
 	background: none;
+	font-size: 12px;
 }
 
 /* MODULE: Clock */
@@ -131,6 +154,10 @@
     /* padding: 0.3rem 0.7rem; */
     /* font-weight: 500; */
     min-width: 0;
+}
+#clock.time {
+	font-size: 15px;
+    font-weight: 400;
 }
 #clock.date {
 	opacity: 0.8;
@@ -141,7 +168,6 @@
     color: #c6d0f5;
 }
 
-
 /* MODULE: Network */
 #network {
 	color: #c6d0f5;
@@ -150,9 +176,9 @@
 
 
 /* MODULE: Bluetooth */
-#bluetooth              { color: #888888; font-size: 16px; }
-#bluetooth.on			{ color: #2196f3; }
-#bluetooth.connected	{ color: #99d1db; }
+/* #bluetooth              { color: #888888; } */
+/* #bluetooth.on			{ color: #2196f3; } */
+/* #bluetooth.connected	{ color: #99d1db; } */
 
 
 /* MODULE: Battery */
@@ -160,6 +186,14 @@
 #battery.charging				{ color: #a6d189; }
 #battery.warning:not(.charging)	{ color: @fg-critical; }
 #battery.critical:not(.charging){ color: @fg-critical; }
+
+/* --- Tooltip Styles --- */
+#custom-separator {
+	background-color: @fg-color;
+	padding: 0;
+	font-size: 0px;
+	min-width: 2px;
+}
 
 /* --- Tooltip Styles --- */
 tooltip {
