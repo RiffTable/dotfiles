@@ -1,16 +1,13 @@
 @define-color th-blue       #62bdfb;
 @define-color th-green      #7cfb62;
 @define-color th-critical   #f8cd0f;
-@define-color ws-inactive   #4f5267;
-@define-color ws-hover      #dddddd;
-@define-color ws-maximize   #dfe294;
-@define-color bg-center     #15161e;
-@define-color bg-whole      #252734;
-@define-color sel-hover     #dddddd;
+@define-color th-highlight  #dddddd;
+@define-color th-inactive   #4f5267;
+@define-color th-border     #3e4052;
+@define-color bg-primary    #15161e;
+@define-color bg-secondary  #20212d;
 @define-color fg-white      #c6d0f5;
 @define-color fg-inactive   #9ea6c4;
-@define-color highlight     #dddddd;
-
 
 
 /* margin: VERTICAL HORIZONTAL; */
@@ -27,7 +24,8 @@
     margin: 0px;
     font-weight: 500;
 
-	background-color: alpha(@bg-whole, 0.9);
+	background-color: alpha(@bg-primary, 0.8);
+	border-bottom: 1px @th-border solid;
 
 	/* padding, margin doesn't work here; Using modules */
 }
@@ -41,13 +39,13 @@
 
 /* MODULE: Workspaces */
 #workspaces {
-    background-color: @bg-center;
+    background-color: @bg-secondary;
     padding: 4px 4px;
 
 	border-radius: 0px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-	border: 1px #3e4052 solid;
+	border: 1px @th-border solid;
 	border-top: none;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
@@ -57,22 +55,22 @@
     border-radius: 99px;
     margin: 4px;
 
-    background: @ws-inactive;
-    border: 2px solid @ws-inactive;
+    background: @th-inactive;
+    border: 2px solid @th-inactive;
 
     transition: all 0.2s ease-in-out;
 }
 #workspaces button label { font-size: 1px; }
 
 #workspaces button.empty {
-    background: none;			border-color: @ws-inactive;
+    background: none;			border-color: @th-inactive;
 }
 #workspaces button.active {
 	min-width: 36px;
     background: @th-blue;		border-color: @th-blue;
 }
 #workspaces button:hover {
-    background: @ws-hover;		border-color: @ws-hover;
+    background: @th-highlight;		border-color: @th-highlight;
 }
 #workspaces button.urgent {
     background: @th-critical;	border-color: @th-critical;
@@ -125,7 +123,7 @@
 
 /* --- TOOLTIP --- */
 tooltip {
-    background-color: @bg-center;
+    background-color: @bg-secondary;
     color: #dddddd;
     padding: 5px 12px;
     margin: 5px 0px;

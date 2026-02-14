@@ -101,7 +101,7 @@
     "battery": {
         "states": {
             "warning": 20,
-            "critical": 5
+            "critical": 10
         },
         "events": {
             "on-discharging-warning": "notify-send -u normal \"Low Battery\"",
@@ -115,12 +115,11 @@
         "format-charging":          "{icon}󱐋 {capacity}",
         "format-full":              "󱟢 {capacity}",
 		"format-charging-warning":  "󱟩 {capacity}",
-		"format-charging-critical": "󱉞 {capacity}",
+		"format-charging-critical": "󱉞 CRIT",
         // "format-plugged": "<big></big> {capacity}",
 
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         // "format-icons": ["󰂎", "󱊡", "󱊢", "󱊣"],
-        // "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
         // "format-icons": [" ", " ", " ", " ", " "],
     },
     "network": {
@@ -149,7 +148,7 @@
         // "scroll-step": 1, // %, can be a float
 		"justify": "center",
         "format": "{icon}  {volume}",
-        "format-muted": " ",
+        "format-muted": "  M",
 
         "format-icons": { "default": ["", "", ""] },
         "on-click": "pavucontrol",
