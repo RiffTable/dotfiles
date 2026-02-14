@@ -78,7 +78,7 @@
     },
     "clock#date": {
 		"justify": "center",
-        "format": " {0:%a %d %b}",
+        "format": "{0:%a %d %b}",
         "tooltip-format": "<tt>{calendar}</tt>",
     },
     "custom/spotify": {
