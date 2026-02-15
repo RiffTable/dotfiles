@@ -94,7 +94,7 @@
         "format": "{}",
         "tooltip": false,
         "exec": "pgrep -x gammastep >/dev/null && echo \"<big>󰖚</big> \" || echo \"<big>󰖙</big> \"",
-        "on-click": "pkill gammastep || gammastep -O 4200&",   // 4200 even in hyprconf
+        "on-click": "pkill gammastep || gammastep -O 3400&",   // 3400 even in hyprconf
         "interval": 2,
         // "return-type": "string",
     },
@@ -114,8 +114,8 @@
         "format":                   "{icon} {capacity}",
         "format-charging":          "{icon}󱐋 {capacity}",
         "format-full":              "󱟢 {capacity}",
-		"format-charging-warning":  "󱟩 {capacity}",
-		"format-charging-critical": "󱉞 CRIT",
+		"format-warning":  "󱟩 {capacity}",
+		"format-critical": "󱉞 CRIT",
         // "format-plugged": "<big></big> {capacity}",
 
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
