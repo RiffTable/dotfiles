@@ -147,10 +147,10 @@
 	"pulseaudio#sink": {
         // "scroll-step": 1, // %, can be a float
 		"justify": "center",
-        "format": "{icon}  {volume}",
+        "format": "{icon} {volume}",
         "format-muted": "  M",
 
-        "format-icons": { "default": ["", "", ""] },
+        "format-icons": { "default": ["", " ", " "] },
         "on-click": "pavucontrol",
     },
     "custom/power": {

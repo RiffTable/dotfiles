@@ -19,12 +19,11 @@
     padding: 0px;
 }
 #waybar {
-    background: transparent;
     color: @fg-white;
+	background-color: alpha(@bg-primary, 0.8);
     margin: 0px;
     font-weight: 500;
 
-	background-color: alpha(@bg-primary, 0.8);
 	border-bottom: 1px @th-border solid;
 
 	/* padding, margin doesn't work here; Using modules */
@@ -131,9 +130,7 @@ tooltip {
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-tooltip label {
-    font-size: 14px;
-}
+tooltip label { font-size: 14px; }
 
 
 
@@ -147,6 +144,7 @@ tooltip label {
 #custom-power {
     padding: 0px 0.4rem;
 	border-radius: 10px;
+	background-color: inherit;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
@@ -159,4 +157,5 @@ tooltip label {
 #custom-power:hover {
 	background-color: @fg-white;
 	color: black;
+	font-weight: 500;
 }
