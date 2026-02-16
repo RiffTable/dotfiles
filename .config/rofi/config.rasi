@@ -6,18 +6,21 @@ configuration {
     scroll-method: 1;    // 0: Per Page, 1: Continuous
     cycle: false;
 
-    kb-remove-word-back: "Control+BackSpace";
+	kb-secondary-copy     : "";
+	kb-accept-custom      : "Control+Return,Control+c";
+    kb-remove-word-back   : "Control+BackSpace";
 	kb-remove-word-forward: "Control+Delete";
-	kb-row-first: ""; 
-	kb-row-last: "";
-	kb-move-front: "Home,KP_Home";
-	kb-move-end: "End,KP_End";
-	kb-clear-line: "Control+x";
+	kb-row-first          : ""; 
+	kb-row-last           : "";
+	kb-move-front         : "Home,KP_Home";
+	kb-move-end           : "End,KP_End";
+	kb-clear-line         : "Control+x";
 
-    // modi: [
-    //  "drun"
-    //  // ,"wifi:~/.config/rofi/rofi-wifi-menu.sh"
-    // ];
+	// modi: [
+	// 	"drun",
+	// 	"emoji",
+	// 	"wifi:~/.config/rofi/rofi-wifi-menu.sh"
+	// ];
     show-icons: true;
     display-drun: "󰀻 Apps";
     display-wifi: " Wifi";
