@@ -2,6 +2,7 @@ configuration {
 	placeholder: "";
     font: "Hack Regular 12";
     scroll-method: 1;    // 0: Per Page, 1: Continuous
+    show-icons: false;
     cycle: false;
 }
 
@@ -12,22 +13,21 @@ configuration {
     selected-normal-foreground : var(fg-active);
     selected-normal-background : var(highlight);
 
-    // background                 : transparent;
-    // normal-background          : transparent;
-    // alternate-normal-background: transparent;
-	background-color           : transparent;
+    background                 : transparent;
+    normal-background          : transparent;
+    alternate-normal-background: transparent;
 
-    // foreground                 : var(fg-active);
-    // normal-foreground          : var(fg-inactive);
-    // alternate-normal-foreground: var(fg-inactive);
+    foreground                 : var(fg-active);
+    normal-foreground          : var(fg-inactive);
+    alternate-normal-foreground: var(fg-inactive);
 
 }
 
 window {
-    location: south;
-    anchor: south;
-    y-offset: -20px;
-    width: 20%;
+    location: center;
+    anchor: center;
+    // y-offset: -20px;
+    width: 30%;
     // height: 60px;
 
     border-radius: 11px;
@@ -59,15 +59,18 @@ textbox {
 
 /*** WIDGET: LISTVIEW ***/
 listview {
+	lines: 1;
+	columns: 5;
     // layout: horizontal;
+    // layout: vertical;
 	flow: horizontal;
+    scrollbar: false;
+	cycle: true;
+    // fixed-height: true;
+
     spacing: 10px;
     padding: 10px;
-    scrollbar: false;
-	lines: 1;
-	columns: 3;
 	border: 0;
-    // fixed-height: true;
 }
 
 element {
@@ -77,15 +80,12 @@ element {
     // spacing: 15px;
 
     orientation: horizontal;
-	background-color: transparent;
-}
 
-element {
-	text-color: var(fg-inactive);
+    cursor: pointer;
 }
 element selected {
-    background-color: @selected-normal-background;
     text-color: @selected-normal-foreground;
+    background-color: @selected-normal-background;
 }
 
 element-text {
