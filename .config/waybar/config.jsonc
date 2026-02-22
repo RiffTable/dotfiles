@@ -15,7 +15,7 @@
     ],
     "modules-right": [
 		"pulseaudio#sink",
-        "keyboard-state",
+        // "keyboard-state",
         "battery",
 		"custom/separator",
         "clock#time",
@@ -176,6 +176,7 @@
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
 	},
     "custom/separator": {
+        "tooltip": false,
         "format": "  ",
         "interval": "once",
     },
