@@ -25,15 +25,7 @@
 		"bluetooth",
         "custom/gammastep",
         "network",
-        "custom/power",
     ],
-    // "group/hardware": {
-    //     "orientation": "vertical",
-    //     "modules": [
-    //          "cpu",
-    //          "memory",
-    //     ]
-    // },
     // "wlr/taskbar": {
     //     "format": "{icon}",
     //     "icon-size": 14,
@@ -60,10 +52,6 @@
         "format": "{icon}",
         "format-icons": {
             // Narrow No-break space: " "
-            // "urgent": " ",
-            // "active": " ",
-            // "default": " ",
-            // "empty": " ",
             "urgent": "",
             "active": "",
             "default": "",
@@ -116,7 +104,6 @@
         "format-full":              "󱟢 {capacity}",
 		"format-warning":  "󱟩 {capacity}",
 		"format-critical": "󱉞 CRIT",
-        // "format-plugged": "<big></big> {capacity}",
 
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         // "format-icons": ["󰂎", "󱊡", "󱊢", "󱊣"],
@@ -153,18 +140,6 @@
         "format-icons": { "default": ["", " ", " "] },
         "on-click": "pavucontrol",
     },
-    "custom/power": {
-        "format": " ",
-        "tooltip": false,
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
-        }
-    },
 	"bluetooth": {
 		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
 		"format": "<big>󰂯</big>",
@@ -180,11 +155,11 @@
         "format": "  ",
         "interval": "once",
     },
-	// "tray": {
-	//     // "icon-size": 21,
-	//     "spacing": 10,
-	//     "icons": {
-	//       "blueman": "bluetooth",
-	//     }
-	// },
+	"tray": {
+	    // "icon-size": 16,
+	    "spacing": 10,
+	    "icons": {
+	      "blueman": "bluetooth",
+	    }
+	},
 }

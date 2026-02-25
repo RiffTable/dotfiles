@@ -82,8 +82,7 @@
 #pulseaudio,
 #bluetooth,
 #custom-gammastep,
-#network,
-#custom-power {
+#network {
 	font-size: 16px;
 	min-width: 16px;
 }
@@ -140,8 +139,7 @@ tooltip label { font-size: 14px; }
 #pulseaudio,
 #bluetooth,
 #custom-gammastep,
-#network,
-#custom-power {
+#network {
     padding: 0px 0.4rem;
 	border-radius: 10px;
 	background-color: inherit;
@@ -153,8 +151,7 @@ tooltip label { font-size: 14px; }
 #pulseaudio:hover,
 #bluetooth:hover,
 #custom-gammastep:hover,
-#network:hover,
-#custom-power:hover {
+#network:hover {
 	background-color: @fg-white;
 	color: black;
 	font-weight: 500;
