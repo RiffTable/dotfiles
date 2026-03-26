@@ -90,6 +90,7 @@ alias dua='du -ah -d1 | sort -hr'
 alias cd..='cd ..'
 alias cdj='cd "$(fd -HL --type d | fzf-tmux -p)"'
 alias diff='diff --color=always --unified'
+alias open=xdg-open
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
     alias clip='wl-copy'
