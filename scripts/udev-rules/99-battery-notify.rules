@@ -1,0 +1,5 @@
+# Battery Charger Connected
+ACTION=="change", SUBSYSTEM=="power_supply", KERNEL=="AC0", ATTR{online}=="1", ENV{POWER_STATUS}="on", RUN+="/usr/bin/sudo -u #1000 DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send 'Connected' 'Power cable connected'"
+
+# Battery Charger Disconnected
+ACTION=="change", SUBSYSTEM=="power_supply", KERNEL=="AC0", ATTR{online}=="0", ENV{POWER_STATUS}="off", RUN+="/usr/bin/sudo -u #1000 DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send 'Disconnected' 'Power cable removed'"

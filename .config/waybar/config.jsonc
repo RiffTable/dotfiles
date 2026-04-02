@@ -87,6 +87,7 @@
         // "return-type": "string",
     },
     "battery": {
+		"interval": 2,
         "states": {
             "warning": 20,
             "critical": 10
