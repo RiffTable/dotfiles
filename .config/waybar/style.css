@@ -100,7 +100,7 @@
     min-width: 0;
 }
 #clock.time {
-	margin-right: 0.7rem;
+	margin-right: 0.3rem;
 }
 #clock.date {
 	color: @fg-inactive;
