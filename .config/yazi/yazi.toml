@@ -1,0 +1,13 @@
+[mgr]    # Manager
+show_hidden = true
+ratio = [0, 2, 5]
+
+[opener]
+wp = [
+	{ run = '/home/riff/.config/hypr/scripts/wp_change.sh %s', desc = "Change wallpaper", for = "linux" }
+]
+
+[open]
+prepend_rules = [
+	{ mime = "image/*", use = ["open", "wp", "reveal"] },
+]

@@ -3,13 +3,15 @@
 
 return {
   "nvim-treesitter/nvim-treesitter",
+	branch = 'main',
+	-- main = 'nvim-treesitter.config',
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   dependencies = {
     "windwp/nvim-ts-autotag",
   },
   config = function()
-    require("nvim-treesitter.configs").setup({
+    require("nvim-treesitter.config").setup({
       highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
