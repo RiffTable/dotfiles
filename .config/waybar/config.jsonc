@@ -22,8 +22,8 @@
         "clock#date",
 		"custom/separator",
 		"pulseaudio#source",
-		"bluetooth",
         "custom/gammastep",
+		"bluetooth",
         "network",
     ],
     // "wlr/taskbar": {
@@ -142,9 +142,10 @@
         "on-click": "pavucontrol",
     },
 	"bluetooth": {
-		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+		"on-click": "rfkill toggle bluetooth",
+		"on-click-right": "kitty -e 'rfkill unblock bluetooth && bluetui'",
 		"format": "<big>󰂯</big>",
-		"format-disabled": "",
+		"format-disabled": "<big>󰂯</big>",
 		"format-connected": "<big>󰂱</big>",
 
 		"tooltip-format": "{controller_alias}\t{controller_address}",

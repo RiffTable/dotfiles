@@ -1,6 +1,6 @@
-@define-color th-blue       #62bdfb;
-@define-color th-green      #7cfb62;
-@define-color th-critical   #f8cd0f;
+@define-color th-blue       #74c7ec;
+@define-color th-green      #a6e3a1;
+@define-color th-critical   #f5e0dc;
 @define-color th-highlight  #dddddd;
 @define-color th-inactive   #4f5267;
 @define-color th-border     #3e4052;
@@ -110,6 +110,9 @@
 
 /* MODULE: Network */
 #network.disconnected { color: @th-critical; }
+
+/* MODULE: Bluetooth */
+#bluetooth.disabled { color: @th-inactive; }
 
 
 /* MODULE: Battery */
