@@ -1,6 +1,5 @@
 [mgr]    # Manager
 show_hidden = true
-ratio = [0, 2, 5]
 
 [opener]
 wp = [
