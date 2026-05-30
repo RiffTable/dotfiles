@@ -8,7 +8,7 @@
     "modules-left": [
         // "wlr/taskbar",
         "tray",
-        "custom/spotify"
+        "custom/mediaplayer"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -69,11 +69,10 @@
         "format": "{0:%a %d %b}",
         "tooltip-format": "<tt>{calendar}</tt>",
     },
-    "custom/spotify": {
+    "custom/mediaplayer": {
         "format": "{}",
         "tooltip": false,
-        "exec": "playerctl metadata --format '  {{ artist }} - {{ title }}'",
-        "exec-if": "pgrep spotify",
+        "exec": "playerctl metadata --format '󰲹  {{ artist }} - {{ title }}'",
         "max-length": 40,
         "interval": 2,
         // "return-type": "string"

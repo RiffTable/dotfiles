@@ -14,7 +14,7 @@ esac
 HISTCONTROL=ignoreboth
 shopt -s histappend
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -86,40 +86,77 @@ eval "$(starship init bash)"
 alias ls='exa --icons=always'
 alias lah='ls -lah'
 alias neofetch='fastfetch'
-alias dua='du -ah -d1 | sort -hr'
-alias cd..='cd ..'
-alias cdj='cd "$(fd -HL --type d | fzf-tmux -p)"'
+alias python='python3'
+alias icat="kitten icat"
 alias diff='diff --color=always --unified'
+alias rm='trash -v'
 alias nmtui="NEWT_COLORS=\$(tr '\n' ' ' < ~/.nmtui-palette) nmtui"
 alias open=xdg-open
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
-if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-    alias clip='wl-copy'
-else
-    alias clip='xclip -sel clip'
-fi
-
+alias dua='du -ah -d1 | sort -hr'
+alias cdj='cd "$(fd -HL --type d | fzf-tmux -p)"'
 alias bashrc='nvim ~/.bashrc'
 alias source-bashrc='source ~/.bashrc'
 alias source-tmux='tmux source-file ~/.tmux.conf'
 alias config-nvim='cd ~/.config/nvim/ && tree'
 alias config-tmux='nvim ~/.tmux.conf'
 alias config-hypr='cd ~/.config/hypr/ && tree'
-
 alias browse="find -not -executable | fzf --preview='bat --color=always {}'"
 alias fuzzy='browse | xargs -r nvim'
-alias rm='trash'
-alias python='python3'
-backup() {
-    mkdir -p "$1.backup"
-    cp -r $1/* $1.backup/
+
+# Usage of alias `clip`
+# --------------------------------
+# echo "..." | clip
+# --------------------------------
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    alias clip='wl-copy'
+else
+    alias clip='xclip -sel clip'
+fi
+
+# Usage of alias `bak`
+# (toggle .bak suffix on file)
+# --------------------------------
+# bak file       file -> file.bat
+# bak file.bak   file.bat -> file
+# --------------------------------
+bak() {
+    if [ -z "$1" ]; then
+        echo "Usage: bak <filename_or_folder>"
+        return 1
+    fi
+
+    local target="${1%/}"    # Strip trailing slashes (e.g., "myfolder/" becomes "myfolder")
+
+    if [ ! -e "$target" ]; then
+        echo "Error: '$target' does not exist."
+        return 1
+    fi
+
+    if [[ "$target" == *.bak ]]; then
+        local dest="${target%.bak}"
+        if [ -e "$dest" ]; then
+			# Makes sure restoration doesn't overwrite a non-bak file
+            echo "Error: Cannot restore, '$dest' already exists."
+            return 1
+        fi
+        mv -- "$target" "$dest" && echo "$target-> $dest"
+    else
+        mv -- "$target" "$target.bak" && echo "$target-> $target.bak"
+    fi
 }
+
 paclist() {
     for i in "$@"; do
         # pacman -Si "$i" | grep "Description" | awk '{printf "$i";printf ": " ;$1=""; $2="";  sub(/^  /, ""); print}'
         pacman -Si $i | grep "Description" | awk -v pac="$i" '{$1=pac; print}'
     done
 }
+
 
 
 bind '"\t":menu-complete' # Cycle through all possible tab completions
