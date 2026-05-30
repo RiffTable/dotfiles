@@ -1,6 +1,12 @@
 # dotfiles
 Personal repo for Linux dotfiles.
 
+- This repository basically has every single configuration I made and it is my personal database for my rices.
+- The following lines are the setup guide just for myself if I decide to reinstall everything.
+- The dotfiles are managed using GNU stow, hence the HOME directory-like layout. `misc/` is for dotfiles outside of the HOME directory like `etc/` or for my Windows PC setup.
+- I made it public for others to view and use as reference and inspiration. Just don't judge my design choice :)
+
+Thanks to [Dreams of Autonomy and his video](https://youtu.be/y6XCebnB9gs) for teaching me how to backup and manage dotfiles.
 
 ## Package Installation
 Required packages and their dependencies: [dependencies.md](dependencies.md)
@@ -20,8 +26,6 @@ Then run stow in the dotfiles directory. This will symlink all config files and 
 ```bash
 stow .
 ```
-
-Thanks to [Dreams of Autonomy's video](https://youtu.be/y6XCebnB9gs) for teaching me how to backup and manage dotfiles.
 
 ## Extra Setup
 Some packages require extra installation and configuration. Follow the guide to complete the setup.
