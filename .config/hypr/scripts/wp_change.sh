@@ -21,13 +21,9 @@ set_wallpaper_with_awww() {
     # -d: transition duration in seconds
     # -f: transition fps
     # --invert: invert the transition direction
-    # --aspect-ratio: adjust aspect ratio (useful for some transitions)
 
     # Some common and nice-looking transitions:
-    # awww img "$wallpaper_path" -o "$monitor_name" --transition-type wipe --transition-duration 0.8 --transition-fps 60 --transition-step 90
-    # awww img "$wallpaper_path" -o "$monitor_name" --transition-type grow --transition-duration 1 --transition-fps 60
-    # awww img "$wallpaper_path" -o "$monitor_name" --transition-type outer --transition-duration 1 --transition-fps 60
-    # awww img "$wallpaper_path" -o "$monitor_name" --transition-type grow --transition-step 90 --transition-duration 1 --transition-fps 60
+    # awww img "$wallpaper_path" -o "$monitor_name" --transition-type wipe --transition-duration 0.8 --transition-fps 60
 
     # If you want to apply to all monitors without specifying each:
     awww img "$wallpaper_path" --transition-type grow --transition-duration 1 --transition-fps 60
@@ -66,13 +62,3 @@ fi
 echo "Selected wallpaper: $NEW_WALLPAPER"
 
 set_wallpaper_with_awww "$NEW_WALLPAPER"
-
-# # 3. Regenerate colors using pywal
-# echo "Generating colors with pywal..."
-# wal -i "$NEW_WALLPAPER" -n # -n prevents pywal from changing the wallpaper itself
-#
-# # 4. Restart waybar to apply new colors
-# pkill waybar && waybar
-#
-# echo "Wallpaper and colors updated successfully!"
-# echo "Note: Hyprlock will use the new background the next time it is invoked."
