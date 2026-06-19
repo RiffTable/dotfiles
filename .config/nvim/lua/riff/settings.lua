@@ -24,56 +24,63 @@ option.tabstop			  = 4
 option.shiftwidth		  = 4
 option.softtabstop    = 4
 
+option.list = true
+option.listchars = {
+	tab = '» ',    -- Shows '»' at the start of a tab, followed by spaces
+	space = '·',   -- Shows a faint dot for every single space character
+	trail = '•',   -- Shows a bullet for trailing whitespace at the end of a line
+}
+
 
 -- Unique language based config s
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "lua" },
-  callback = function()
+	pattern = { "lua", "html" },
+	callback = function()
 		vim.opt_local.expandtab   = false
-    vim.opt_local.tabstop     = 2
-    vim.opt_local.shiftwidth  = 2
-    vim.opt_local.softtabstop = 2
-  end,
+		vim.opt_local.tabstop     = 2
+		vim.opt_local.shiftwidth  = 2
+		vim.opt_local.softtabstop = 2
+	end,
 })
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "python" },
-  callback = function()
+	pattern = { "python" },
+	callback = function()
 		vim.opt_local.expandtab   = false
-    vim.opt_local.tabstop     = 4
-    vim.opt_local.shiftwidth  = 4
-    vim.opt_local.softtabstop = 4
-  end,
+		vim.opt_local.tabstop     = 4
+		vim.opt_local.shiftwidth  = 4
+		vim.opt_local.softtabstop = 4
+	end,
 })
 
 -- Compile command
 vim.api.nvim_create_user_command("Build", function()
-  local ft = vim.bo.filetype
+	local ft = vim.bo.filetype
 
-  if ft == 'c' then
-    vim.cmd('!gcc -Wall -o %:r %')
-  elseif ft == 'cpp' then
-    vim.cmd('!g++ -Wall -o %:r %')
-  elseif ft == 'java' then
-    vim.cmd('!javac %')
-  else
-    print("Unsupported filetype: " .. ft)
-  end
+	if ft == 'c' then
+		vim.cmd('!gcc -Wall -o %:r %')
+	elseif ft == 'cpp' then
+		vim.cmd('!g++ -Wall -o %:r %')
+	elseif ft == 'java' then
+		vim.cmd('!javac %')
+	else
+		print("Unsupported filetype: " .. ft)
+	end
 end, {})
 
 -- Don't create comments on newline
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
-  callback = function()
-    vim.opt_local.formatoptions:remove({'o'})
-  end,
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove({'o'})
+	end,
 })
 
 -- Show help menu at side instead of bottom
 vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*.txt",
-  callback = function()
-    if vim.bo.filetype == "help" then
-      vim.cmd("wincmd L")
-    end
-  end,
+	pattern = "*.txt",
+	callback = function()
+		if vim.bo.filetype == "help" then
+			vim.cmd("wincmd L")
+		end
+	end,
 })
