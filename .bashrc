@@ -177,3 +177,5 @@ export EDITOR=nvim
 
 
 # Even Better!: https://www.nerdfonts.com/cheat-sheet
+
+. "$HOME/.local/bin/env"

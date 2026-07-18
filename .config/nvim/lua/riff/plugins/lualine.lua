@@ -25,9 +25,7 @@ return{
         lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {'filename'},
         lualine_x = {},
-        lualine_y = {
-          'lsp_status'
-        },
+        lualine_y = {'lsp_status'},
         lualine_z = {'location'}
       },
       inactive_sections = {
