@@ -7,8 +7,8 @@
     "spacing": 0, // Gaps between modules (4px)
     "modules-left": [
         // "wlr/taskbar",
-        "tray",
-        "custom/mediaplayer"
+        "tray"
+        // "custom/mediaplayer"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -24,7 +24,7 @@
 		"pulseaudio#source",
         "custom/gammastep",
 		"bluetooth",
-        "network",
+        "network"
     ],
     // "wlr/taskbar": {
     //     "format": "{icon}",
