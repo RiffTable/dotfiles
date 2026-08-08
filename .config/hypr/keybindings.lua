@@ -18,19 +18,20 @@ local rofi_scripts = "~/.config/rofi"
 -- 2. 
 -- 3. 
 
-hl.bind("Insert", hl.dsp.pass("^(Caps_Lock)$"))
+-- hl.bind("Insert", hl.dsp.pass("^(Caps_Lock)$"))
 
 -- Window Control
 hl.bind(subMod .. " + C", hl.dsp.window.close())
 hl.bind(subMod .. " + V", hl.dsp.window.float())
-hl.bind(subMod .. " + M", hl.dsp.window.fullscreen())
+hl.bind(subMod .. " + M", hl.dsp.window.fullscreen({ mode = "maximized" }))
 hl.bind(subMod .. " + F", hl.dsp.window.fullscreen())
+
 hl.bind("ALT + TAB", hl.dsp.window.cycle_next())
-hl.bind("ALT + TAB", hl.dsp.window.alter_zorder("top"))
+hl.bind("ALT + TAB", hl.dsp.window.alter_zorder({ mode = "top" }))
 
 -- Minimizing windows
-hl.bind(hyprMod .. " + UP", hl.dsp.exec_cmd("~/.config/hypr/scripts/unminimize.sh"))
-hl.bind(hyprMod .. " + DOWN", hl.dsp.window.move({ workspace = "special:shadow" }, { follow = false }))
+hl.bind(hyprMod .. " + UP",   hl.dsp.exec_cmd("~/.config/hypr/scripts/unminimize.sh"))
+hl.bind(hyprMod .. " + DOWN", hl.dsp.window.move({ workspace = "special:shadow", follow = false }))
 
 
 -- Applications
@@ -105,18 +106,18 @@ hl.bind("ALT + F4", hl.dsp.window.close())
 -- hl.bind(subMod.."+SHIFT+L", hl.dsp.resize({ 20,  0}))
 
 local navMap = {
-	{ keys = { "LEFT",  "H" }, dir = "l", size = { -20,   0 } },
-	{ keys = { "DOWN",  "J" }, dir = "d", size = {   0,  20 } },
-	{ keys = { "UP",    "K" }, dir = "u", size = {   0, -20 } },
-	{ keys = { "RIGHT", "L" }, dir = "r", size = {  20,   0 } },
+	{ keys = { "LEFT",  "H" }, dir = "l", size = { x= -20, y=   0 } },
+	{ keys = { "DOWN",  "J" }, dir = "d", size = { x=   0, y=  20 } },
+	{ keys = { "UP",    "K" }, dir = "u", size = { x=   0, y= -20 } },
+	{ keys = { "RIGHT", "L" }, dir = "r", size = { x=  20, y=   0 } },
 }
 
 for _, item in ipairs(navMap) do
 	-- First, key = <arrow key>, then key = <vim key>
 	for _, key in ipairs(item.keys) do
 		hl.bind(subMod .. "+" .. key, hl.dsp.focus({ direction = item.dir }))
-		hl.bind(subMod .. "+CTRL+" .. key, hl.dsp.move({ direction = item.dir }))
-		hl.bind(subMod .. "+SHIFT+" .. key, hl.dsp.resize(item.size))
+		hl.bind(subMod .. "+CTRL+" .. key, hl.dsp.window.move({ direction = item.dir }))
+		hl.bind(subMod .. "+SHIFT+" .. key, hl.dsp.window.resize(item.size))
 	end
 end
 
@@ -137,14 +138,14 @@ for n = 1, 5 do
 	-- Switch to n-th workspace
 	hl.bind(subMod .. " + " .. n, hl.dsp.focus({ workspace = "e~" .. n }))
 	-- Move active window to n-th workspace
-	hl.bind(subMod .. " + SHIFT + " .. n, hl.dsp.window.move({ direction = "e~" .. n }))
+	hl.bind(subMod .. " + SHIFT + " .. n, hl.dsp.window.move({ workspace = "e~" .. n }))
 end
 
 -- HYPR + LEFT/RIGHT
 hl.bind(hyprMod .. " + LEFT", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(hyprMod .. " + RIGHT", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(hyprMod .. " + SHIFT + LEFT", hl.dsp.window.move({ direction = "e-1" }))
-hl.bind(hyprMod .. " + SHIFT + RIGHT", hl.dsp.window.move({ direction = "e+1" }))
+hl.bind(hyprMod .. " + SHIFT + LEFT", hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(hyprMod .. " + SHIFT + RIGHT", hl.dsp.window.move({ workspace = "e+1" }))
 
 
 -- Resize window using Mod Key
