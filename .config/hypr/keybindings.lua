@@ -106,10 +106,10 @@ hl.bind("ALT + F4", hl.dsp.window.close())
 -- hl.bind(subMod.."+SHIFT+L", hl.dsp.resize({ 20,  0}))
 
 local navMap = {
-	{ keys = { "LEFT",  "H" }, dir = "l", size = { x= -20, y=   0 } },
-	{ keys = { "DOWN",  "J" }, dir = "d", size = { x=   0, y=  20 } },
-	{ keys = { "UP",    "K" }, dir = "u", size = { x=   0, y= -20 } },
-	{ keys = { "RIGHT", "L" }, dir = "r", size = { x=  20, y=   0 } },
+	{ keys = { "LEFT",  "H" }, dir = "l", size = { x= -20, y=   0, relative = true } },
+	{ keys = { "DOWN",  "J" }, dir = "d", size = { x=   0, y=  20, relative = true } },
+	{ keys = { "UP",    "K" }, dir = "u", size = { x=   0, y= -20, relative = true } },
+	{ keys = { "RIGHT", "L" }, dir = "r", size = { x=  20, y=   0, relative = true } },
 }
 
 for _, item in ipairs(navMap) do
